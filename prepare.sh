@@ -38,4 +38,6 @@ addgroup openttd users
 chmod +x /openttd.sh
 
 ## Copy the openttd.cfg config file
-mv /tmp/openttd.cfg /home/openttd/.openttd/
+mkdir -p /home/openttd/.openttd
+chown openttd:openttd /home/openttd/.openttd
+mv /tmp/openttd.cfg /home/openttd/.openttd
