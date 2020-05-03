@@ -36,3 +36,6 @@ addgroup openttd users
 
 ## Set entrypoint script to right user
 chmod +x /openttd.sh
+
+## Copy the openttd.cfg config file
+mv /tmp/openttd.cfg /home/openttd/.openttd/
