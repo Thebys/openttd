@@ -29,6 +29,10 @@ User gid:    $(id -g ${USER})
 User Home:   $(grep ${USER} /etc/passwd | cut -d':' -f6)
 -----------------------------------
 "
+# Modifies the config based on environment variables (supplied by docker run -e xxx)
+sed -i "s/^\(rcon_password\s*=\s*\).*\$/\1${RCONPW:-"rconpw123"}/" /usr/share/games/openttd/openttd.cfg
+sed -i "s/^\(admin_password\s*=\s*\).*\$/\1${ADMINPW:-"adminpw123"}/" /usr/share/games/openttd/openttd.cfg
+sed -i "s/^\(server_name\s*=\s*\).*\$/\1${SERVERNAME:-"_My Docker Server_"}/" /usr/share/games/openttd/openttd.cfg
 
 # Loads the desired game, or prepare to load it next time server starts up!
 if [ ${LOADGAME_CHECK} != "x" ]; then

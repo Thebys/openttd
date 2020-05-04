@@ -37,11 +37,7 @@ addgroup openttd users
 ## Set entrypoint script to right user
 chmod +x /openttd.sh
 
-## Copy the openttd.cfg config file
+## Copy the initial openttd.cfg config file
 mkdir -p /home/openttd/.openttd
 chown openttd:openttd /home/openttd/.openttd
 cp /tmp/openttd.cfg  /usr/share/games/openttd/openttd.cfg
-
-## Update admin and rcon password
-sed -i "s/^\(rcon_password\s*=\s*\).*\$/\1${RCONPW:-"rconpw123"}/" /usr/share/games/openttd/openttd.cfg
-sed -i "s/^\(admin_password\s*=\s*\).*\$/\1${ADMINPW:-"adminpw123"}/" /usr/share/games/openttd/openttd.cfg
