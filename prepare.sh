@@ -1,3 +1,6 @@
+RCONPW=${RCON:-"rconpw123"}
+ADMINPW=${ADMIN:-"adminpw123"}
+
 #!/bin/bash
 set -e
 source /tmp/buildconfig
@@ -41,3 +44,7 @@ chmod +x /openttd.sh
 mkdir -p /home/openttd/.openttd
 chown openttd:openttd /home/openttd/.openttd
 cp /tmp/openttd.cfg  /usr/share/games/openttd/openttd.cfg
+
+## Update admin and rcon password
+sed -i "s/^\(rcon_password\s*=\s*\).*\$/\1$RCONPW/" /usr/share/games/openttd/openttd.cfg
+sed -i "s/^\(admin_password\s*=\s*\).*\$/\1$ADMINPW/" /usr/share/games/openttd/openttd.cfg
