@@ -14,7 +14,7 @@ RUN chmod +x /tmp/prepare.sh /tmp/cleanup.sh /openttd.sh
 RUN /tmp/prepare.sh \
     && /tmp/cleanup.sh
 
-VOLUME /home/openttd/.openttd
+VOLUME /home/openttd
 
 EXPOSE 3979/tcp
 EXPOSE 3979/udp

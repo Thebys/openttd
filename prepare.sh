@@ -37,8 +37,11 @@ addgroup openttd users
 ## Set entrypoint script to right user
 chmod +x /openttd.sh
 
+## TODO: Use a variable to control this like openttd.exe -c <path> or drop this in favor of mounter folder.
 ## Copy the initial openttd.cfg config file
 mkdir -p /home/openttd/.openttd
-chown openttd:openttd /home/openttd/.openttd
-cp /tmp/openttd.cfg  /usr/share/games/openttd/openttd.cfg
-cp -a /tmp/openttdscripts/.  /usr/share/games/openttd/scripts/
+chown -R openttd:openttd /home/openttd
+cp /tmp/openttd.cfg /home/openttd/.openttd/openttd.cfg
+#/usr/share/games/openttd/openttd.cfg # <- default game config in install dir?
+## Copy server scripts
+cp -a /tmp/openttdscripts/. /home/openttd/.openttd/scripts/
