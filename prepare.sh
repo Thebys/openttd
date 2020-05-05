@@ -41,3 +41,4 @@ chmod +x /openttd.sh
 mkdir -p /home/openttd/.openttd
 chown openttd:openttd /home/openttd/.openttd
 cp /tmp/openttd.cfg  /usr/share/games/openttd/openttd.cfg
+cp -a /tmp/openttdscripts/.  /usr/share/games/openttd/scripts/
