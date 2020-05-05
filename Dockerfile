@@ -10,8 +10,6 @@ ADD --chown=1000:1000 openttd.sh /openttd.sh
 ADD openttd.cfg /tmp/openttd.cfg
 ADD openttdscripts /tmp/openttdscripts
 
-VOLUME /home/openttd/.openttd
-
 RUN chmod +x /tmp/prepare.sh /tmp/cleanup.sh /openttd.sh
 RUN /tmp/prepare.sh \
     && /tmp/cleanup.sh
