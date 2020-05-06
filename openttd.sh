@@ -9,6 +9,8 @@ PUID=${PUID:-911}
 PGID=${PGID:-911}
 PHOME=${PHOME:-"/home/openttd"}
 USER=${USER:-"openttd"}
+DEBUG=${DEBUG:-2}
+
 
 if [ ! "$(id -u ${USER})" -eq "$PUID" ]; then usermod -o -u "$PUID" ${USER} ; fi
 if [ ! "$(id -g ${USER})" -eq "$PGID" ]; then groupmod -o -g "$PGID" ${USER} ; fi
