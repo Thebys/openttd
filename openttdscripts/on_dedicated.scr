@@ -1,5 +1,2 @@
 #Before starting new game, update downloadable content
 echo "This is on_dedicated.scr script"
-echo "Starting downloadable content update..."
-content update
-#No way of waiting for downloaded content to be ready and continue game setup here :(
